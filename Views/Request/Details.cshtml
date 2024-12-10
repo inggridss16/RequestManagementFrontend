@@ -1,0 +1,92 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<section>
+    <ul class="nav nav-tabs" id="tab-details" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="tab-request-detail" data-toggle="tab" href="#request-detail" role="tab" aria-controls="request-detail" aria-selected="true">Request Detail</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab-expenses-list" data-toggle="tab" href="#expenses-list" role="tab" aria-controls="expenses-list" aria-selected="false">Expenses List</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="request-detail" role="tabpanel" aria-labelledby="tab-request-detail">
+            <input type="hidden" value="@ViewData["WebAPIUrl"]" id="hdn-web-api-url" />
+            <input type="hidden" class="form-control" id="txt-req-number" />
+            <div class="form-group">
+                <label>Description <span id="mandatory-description">*</span></label>
+                <textarea class="form-control" id="ta-description" rows="3" maxlength="250"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Applicant</label>
+                <select class="form-control" id="ddl-applicant">
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Owner</label>
+                <select class="form-control" id="ddl-owner">
+                    <option>TBG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Category<span>*</span></label>
+                <select class="form-control" id="ddl-category">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Sub Category<span>*</span></label>
+                <select class="form-control" id="ddl-sub-category">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Status</label>
+                <select class="form-control" id="ddl-status">
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Expenses</label>
+                <input type="text" class="form-control" id="txt-expenses" placeholder="0" value="0">
+            </div>
+            <button id="bt-create-request" class="btn btn-primary" data-style="zoom-in" style="margin-top:20px;">
+                <i class=""></i> Create
+            </button>
+            <button id="bt-update-request" class="btn btn-primary" data-style="zoom-in" style="margin-top:20px;">
+                <i class=""></i> Update
+            </button>
+            <button id="bt-delete-request" class="btn btn-danger" data-style="zoom-in" style="margin-top:20px;">
+                <i class=""></i> Delete
+            </button>
+            <button id="bt-approve-request" class="btn btn-success" data-style="zoom-in" style="margin-top:20px;">
+                <i class=""></i> Approve
+            </button>
+            <button id="bt-reject-request" class="btn btn-warning" data-style="zoom-in" style="margin-top:20px;">
+                <i class=""></i> Reject
+            </button>
+
+        </div>
+        <div class="tab-pane fade" id="expenses-list" role="tabpanel" aria-labelledby="tab-expenses-list">
+            <button type="button" id="bt-new-expense" class="btn btn-primary" data-style="zoom-in">
+                <i class=""></i> New
+            </button>
+            <table id="tbl-expenses" class="table table-striped table-bordered table-hover datatable-custom-width">
+                <thead>
+                    <tr>
+                        <th scope="col">Requests</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Comment</th>
+                        <th scope="col">Imported</th>
+                    </tr>
+                </thead>
+            </table>
+            <!-- Add expenses list content here -->
+        </div>
+    </div>
+</section>
+
+<script src="~/js/Request/details.js"></script>
