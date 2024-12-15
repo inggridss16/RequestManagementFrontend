@@ -41,7 +41,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
     SaveNewExpense: function (expense, onSuccess, onFailed) {
@@ -57,7 +57,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
 
@@ -72,7 +72,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -86,7 +86,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -103,7 +103,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -121,7 +121,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -242,22 +242,7 @@ let Form = {
                 Form.Expense.UpdateExpense.Event();
 
                 Form.Expense.UpdateExpense.GetTrxExpensesRequestsManagementById();
-                // Check if the user is a Non-division User and disable fields if necessary
-                /*Api.GetTrxRequestsManagementById(Form.idRequest, function (requestData) {
-                    if ($(Selector.hdnRoleId).val() == "1" && requestData.createdBy != $(Selector.hdnUserId).val()) {
-                        Form.Expense.DisableExpenseFields();
-                        Form.HideUpdateButton();
-                        Form.HideDeleteButton();
-                    } else {
-                        if ($(Selector.hdnRoleId).val() != "6") {
-                            Form.ShowDeleteButton();
-                        } else {
-                            Form.HideDeleteButton();
-                        }
-                    }
-                }, function (error) {
-                    alert("Error fetching request data: " + error);
-                });*/
+                
             },
             Event: function () {
                 $(Selector.btUpdateExpense).off("click").on("click", function () {

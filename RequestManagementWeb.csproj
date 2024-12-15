@@ -7,17 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\Permission\details.js" />
+    <Content Remove="wwwroot\js\User\details.js" />
+    <Content Remove="wwwroot\js\User\index.js" />
+    <Content Remove="wwwroot\js\Permission\index.js" />
     <Content Remove="wwwroot\js\Request\details.js" />
     <Content Remove="wwwroot\js\Request\expense.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\Permission\details.js" />
+    <None Include="wwwroot\js\User\details.js" />
+    <None Include="wwwroot\js\User\index.js" />
+    <None Include="wwwroot\js\Permission\index.js" />
     <None Include="wwwroot\js\Request\expense.js" />
     <None Include="wwwroot\js\Request\details.js" />
     <None Include="wwwroot\js\Request\index.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Permission\Details.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="Views\Request\Expense.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

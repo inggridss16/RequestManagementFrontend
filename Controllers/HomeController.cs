@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RequestManagementWeb.Models;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace RequestManagementWeb.Controllers
 {
@@ -17,6 +18,11 @@ namespace RequestManagementWeb.Controllers
 
         public IActionResult Index()
         {
+            ViewData["CurrentUserId"] = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            ViewData["CurrentUserName"] = User.FindFirst(ClaimTypes.Name).Value;
+            ViewData["CurrentDivisionId"] = User.FindFirst("DivisionId").Value;
+            ViewData["CurrentRoleId"] = User.FindFirst(ClaimTypes.Role).Value;
+
             return View();
         }
 

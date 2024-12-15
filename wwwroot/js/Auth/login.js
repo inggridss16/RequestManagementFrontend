@@ -27,7 +27,7 @@ let Control = {
 
             Api.CheckLogin(username, password,
                 function () { // Success callback
-                    window.location.href = '/Request';
+                    window.location.href = '/';
                 },
                 function (errorMessage) { // Failure callback
                     $(Selector.divError).text(errorMessage).show();

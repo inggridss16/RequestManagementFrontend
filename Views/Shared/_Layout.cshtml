@@ -29,19 +29,28 @@
         <input type="hidden" value="@ViewData["CurrentRoleId"]" id="hdn-role-id" />
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Auth" asp-action="Login">RequestManagementWeb</a>
+                <a class="navbar-brand" asp-area="" asp-controller="" asp-action="">RequestManagementWeb</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1">
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
-                        </li> *@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Request</a>
-                        </li>
+                        @if ((string)ViewData["CurrentRoleId"] == "10")
+                            {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Permission" asp-action="Index">Permission</a>
+                            </li>
+                            }
+                        else if (ViewData["CurrentRoleId"] != null)
+                            {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Request</a>
+                            </li>
+                            }
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item" id="welcome-message">

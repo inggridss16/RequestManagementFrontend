@@ -78,7 +78,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -91,7 +91,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
     GetDDLCategory: function (onSuccess, onFailed) {
@@ -103,7 +103,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
     GetDDLSubCategory: function (onSuccess, onFailed) {
@@ -115,7 +115,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
     GetDDLStatus: function (onSuccess, onFailed) {
@@ -127,7 +127,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
     SaveNewRequest: function (request, onSuccess, onFailed) {
@@ -143,7 +143,7 @@ let Api = {
                 onSuccess(data);
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function')
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
         });
     },
 
@@ -158,7 +158,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -175,7 +175,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -192,7 +192,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -215,7 +215,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
@@ -808,8 +808,6 @@ let Form = {
             },
 
         },
-
-
     },
     
 }

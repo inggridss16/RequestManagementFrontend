@@ -75,7 +75,7 @@ let Api = {
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof onFailed === 'function') {
-                onFailed(errorThrown);
+                onFailed(jqXHR.responseText);
             }
         });
     },
